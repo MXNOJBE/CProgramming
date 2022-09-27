@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/MXNOJBE/Desktop/CLab",
-      "program": "c:/Users/MXNOJBE/Desktop/CLab/build/Debug/outDebug",
+      "cwd": "c:/Users/MXNOJBE/Desktop/c/CLab",
+      "program": "c:/Users/MXNOJBE/Desktop/c/CLab/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
