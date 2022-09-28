@@ -6,15 +6,14 @@ struct book
 {
     char bookname[50];
     int bookno;
-};
+} b[2];
 
 void write()
 {
     int n;
     FILE *p;
-    struct book b;
+    p = fopen("C:\\Users\\MXNOJBE\\Desktop\\c\\CLab\\file.bin", "wb+");
 
-    p = fopen("C:\\Users\\MXNOJBE\\Desktop\\CLab\\book.bin", "w");
     if (p == NULL)
     {
         printf("Error!");
@@ -23,9 +22,9 @@ void write()
     for (int i = 0; i < 2; i++)
     {
         printf("Enter the book Name: ");
-        scanf("%s", &b.bookname);
+        scanf("%s", &b[i].bookname);
         printf("Enter the book code: ");
-        scanf("%d", &b.bookno);
+        scanf("%d", &b[i].bookno);
     }
     fclose(p);
 }
@@ -33,9 +32,8 @@ void display()
 {
     int n;
     FILE *p;
-    struct book b;
+    p = fopen("C:\\Users\\MXNOJBE\\Desktop\\c\\CLab\\file.bin", "wb+");
 
-    p = fopen("C:\\Users\\MXNOJBE\\Desktop\\CLab\\book.bin", "rb");
     if (p == NULL)
     {
         printf("Error!");
@@ -43,8 +41,8 @@ void display()
     }
     for (int i = 0; i < 2; i++)
     {
-        fread(&p, sizeof(struct book), 1, p);
-        printf("\n\t%s\t%d", b.bookname, b.bookno);
+        // fread(&b, sizeof(struct book), 1, p);
+        printf("\n\t%s\t%d", b[i].bookname, b[i].bookno);
         // fwrite(&p, sizeof(struct book), 1, p);
         fclose(p);
     }
@@ -52,7 +50,7 @@ void display()
 
 int main()
 {
-    int choice;
+    int choice, *p;
 loop:
     printf("\nEnter 1 input the values\n");
     printf("Enter 2 to view in a format");
@@ -60,9 +58,9 @@ loop:
     scanf("%d", &choice);
     if (choice == 1)
     {
-        write();
+        write(&p);
     }
     else
-        display();
+        display(&p);
     goto loop;
 }

@@ -11,7 +11,7 @@ struct book
 void main()
 {
     int ch, n, i, j, flag = 1;
-    printf("\nEnter the number of books :");
+    printf("\nEnter the number of books: ");
     scanf("%d", &n);
     struct book p[n];
     FILE *fptr;
@@ -30,7 +30,7 @@ void main()
         case 1:
             for (i = 0; i < n; i++)
             {
-                system("clear");
+
                 printf("\nEnter book %d details", i + 1);
                 printf("\nEnter id : ");
                 scanf("%d", &p[i].id);
@@ -44,7 +44,6 @@ void main()
             break;
 
         case 2:
-            system("cls");
             printf("\n  ID \tTITLE \tRATE\n");
             printf("-----------------------");
             for (i = 0; i < n; i++)
